@@ -1,16 +1,64 @@
-# React + Vite
+# Support Analytics Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A polished, AI-powered support analytics dashboard built in React. It visualizes customer support metrics using mock data and includes a Claude-powered **Insights panel** that analyzes the data and surfaces real, actionable observations.
 
-Currently, two official plugins are available:
+## What It Does
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Displays key support KPIs: ticket volume, resolution times, SLA compliance, CSAT score, and issue category breakdowns
+- Charts trends over time using [Recharts](https://recharts.org)
+- Feeds the mock data to Claude (Anthropic API) to generate a live Insights panel with meaningful analysis — not just summaries, but actual observations about performance, anomalies, and areas to watch
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** (via Vite)
+- **Recharts** — charting library for all data visualizations
+- **Claude API (Anthropic)** — powers the AI Insights panel
+- HTML, CSS, JavaScript — no TypeScript, no UI framework
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   └── Dashboard.jsx       # Main dashboard layout
+├── data/
+│   └── mockData.js         # Baked-in mock support metrics
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## Mock Data
+
+All data is baked in — no backend required. [`src/data/mockData.js`](src/data/mockData.js) exports:
+
+| Export | Description |
+|---|---|
+| `ticketVolume` | Monthly ticket counts (Dec–May) |
+| `resolutionTimes` | Avg resolution hours by category |
+| `slaPerformance` | SLA target vs. met rate by tier |
+| `issueCategories` | Ticket count by issue type |
+| `satisfactionTrend` | Monthly CSAT scores |
+| `metrics` | Top-level summary stats |
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+To enable the AI Insights panel, add your Anthropic API key:
+
+```bash
+VITE_ANTHROPIC_API_KEY=your_key_here
+```
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run ESLint |
