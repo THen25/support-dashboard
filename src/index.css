@@ -1,17 +1,89 @@
-* {
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
-  margin: 0;
-  padding: 20px;
+  font-family: system-ui, sans-serif;
+  background-color: #f5f5f4;
+  color: #1c1c1a;
+  min-height: 100vh;
 }
 
-h1 {
-  margin-bottom: 20px;
+.dashboard {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.dashboard-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: #1c1c1a;
+}
+
+.dashboard-sub {
+  font-size: 13px;
+  color: #888780;
+  margin-top: 4px;
+}
+
+.period-badge {
+  font-size: 12px;
+  color: #5f5e5a;
+  background: #e8e7e3;
+  border-radius: 6px;
+  padding: 4px 10px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 2rem;
+}
+
+.metric-card {
+  background: #ffffff;
+  border: 1px solid #e8e7e3;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+}
+
+.metric-label {
+  font-size: 11px;
+  color: #888780;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.metric-value {
+  font-size: 26px;
+  font-weight: 600;
+  color: #1c1c1a;
+  line-height: 1;
+}
+
+.metric-delta {
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.delta-positive {
+  color: #3b6d11;
+}
+
+.delta-negative {
+  color: #a32d2d;
 }
