@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "status": "Resolved",
+    "priority": "High",
+    "category": "Software",
+    "resolutionTime": 4,
+    "date": "2026-05-01"
+  },
+  {
+    "id": 2,
+    "status": "Open",
+    "priority": "Low",
+    "category": "Account",
+    "resolutionTime": 0,
+    "date": "2026-05-02"
+  }
+]
